@@ -1,0 +1,99 @@
+<div class="content">
+    <form class="detailsform"   [formGroup]="adForm" (ngSubmit)="onSubmit()">
+       <div class="boxmodel">
+           <div class="form-group row">
+               <div class="col-md-2">
+                    <label for="StudentId">No</label>
+               </div>
+               <div class="col-md-6">
+                   <input type="StudentId" formControlName="adId" class="form-control" placeholder="Enter No"
+                   [ngClass]="{ 'is-invalid': submitted && f.adId.errors }">
+                   <div *ngIf="submitted && f.adId.errors" class="invalid-feedback">
+                    <div *ngIf="f.adId.errors.required">Name is required</div>
+                </div>
+               </div>
+           </div>
+
+           <div class="form-group row">
+               <div class="col-md-2">
+                   <label for="Name">Name</label>
+               </div>
+               <div class="col-md-6">
+                   <input type="Name" value="Name"  formControlName="adName" class="form-control"placeholder="Enter Advertisment Name"
+                   [ngClass]="{ 'is-invalid': submitted && f.adName.errors }" >
+                   <div *ngIf="submitted && f.adName.errors" class="invalid-feedback">
+                       <div *ngIf="f.adName.errors.required">Name is required</div>
+                   </div>
+               </div>
+           </div>
+
+           <div class="form-group row">
+            <div class="col-md-2">
+                 <label for="Gmail">Advertisment Email</label>
+            </div>
+            <div class="col-md-6">
+                <input type="Gmail" value="adDescription" formControlName="Email" class="form-control"  placeholder="Enter Description"
+                [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+                <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                    <div *ngIf="f.Email.errors.required">Email is required</div>
+                </div>
+            </div>
+        </div>
+
+           <div class="form-group row">
+               <div class="col-md-2">
+                    <label for="Gmail">Advertisment Description</label>
+               </div>
+               <div class="col-md-6">
+                   <input type="Gmail" value="adDescription" formControlName="adDescription" class="form-control"  placeholder="Enter Description"
+                   [ngClass]="{ 'is-invalid': submitted && f.adDescription.errors }">
+                   <div *ngIf="submitted && f.adDescription.errors" class="invalid-feedback">
+                       <div *ngIf="f.adDescription.errors.required">Description is required</div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="form-group row">
+               <div class="col-md-2">
+                    <label for="Gmail">Advertisment Type</label>
+               </div>
+               <div class="col-md-6">
+                   <input type="Area"  formControlName="Type" class="form-control" placeholder="Enter type"
+                   [ngClass]="{ 'is-invalid': submitted && f.Type.errors }">
+                   <div *ngIf="submitted && f.Type.errors" class="invalid-feedback">
+                       <div *ngIf="f.Type.errors.required">Type is required</div>
+                   </div>
+               </div>
+           </div>
+
+           <!-- <div class="form-group row">
+                <div class="col-md-2">
+                    <label for="Gmail">Start Date</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="Gmail" value="adDescription" formControlName="startDate" class="form-control"  placeholder="Enter start date"
+                    [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }">
+                    <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.startDate.errors.required">Description is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-2">
+                    <label for="Gmail">Advertisment Type</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="Area"  formControlName="EndDate" class="form-control" placeholder="Enter type"
+                    [ngClass]="{ 'is-invalid': submitted && f.EndDate.errors }">
+                    <div *ngIf="submitted && f.EndDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.EndDate.errors.required">Type is required</div>
+                    </div>
+                </div>
+            </div> -->
+
+           <button type="submit" class="btn btn-primary">Submit</button>
+           <button type="button" class="btn btn-warning" (click)="Cancel()">Cancel</button>          
+           
+       </div>      
+       </form>

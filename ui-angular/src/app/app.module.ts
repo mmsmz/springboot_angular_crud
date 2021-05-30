@@ -1,32 +1,32 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
-
-
 import { HttpClientModule } from '@angular/common/http';
-import {​​​ ReactiveFormsModule,FormsModule }​​​ from '@angular/forms';
-import {​​​ BrowserAnimationsModule}​​​ from '@angular/platform-browser/animations';
 
+
+import { AppComponent } from './app.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TableComponent } from './table/table.component';
+import { AddDetailsComponent } from './add-details/add-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    UserRegistrationComponent,
+    UserLoginComponent,
     DashboardComponent,
-    UserRegistrationComponent
+    TableComponent,
+    AddDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+.content{
+    z-index: 22;
+    padding: 30px;
+    position: relative;
+    left: 15%;
+    width: calc(100% - 15%);
+    top: 62px;
+}
+.btn{
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.test{
+    background-color: red;
+}

@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="card" *ngIf="issuccess">
+        <div class="card-header">Featured</div>
+
+        <!-- <div class="form-group row serachform">
+           <label for="inputPassword" class="col-sm-12 col-form-label"
+              >Filter by
+           </label>
+           <div class="col-md-2 col-sm-12">
+              <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="listFilter"
+              placeholder="Filter"
+              />
+           </div>
+           <button
+              class="btn btn-primary float-right"
+              routerLink="/form-deatails"
+            >
+           Add Details
+           </button>
+        </div> -->
+
+        <table class="table table-bordered table-striped table-hover">
+           <thead>
+              <tr>
+                 <th class="text-center">No</th>
+                 <th class="text-center">Name</th>
+                 <th class="text-center">Description</th>
+                 <th class="text-center">Type</th>
+                 <th class="text-center">Email</th>
+                 <!-- <th class="text-center">Start Date</th>
+                 <th class="text-center">End Date</th> -->
+              </tr>
+           </thead>
+
+           <tbody>
+              <tr *ngFor="let dyTable of dyanamicTable; let i = index">
+                <td>{{ dyTable.advertisingId }}</td>
+                <td>{{ dyTable.vacancyName }}</td>
+                <td>{{ dyTable.vacancyDescription }}</td>
+                <td>{{ dyTable.vacancyType }}</td>
+
+                <td>{{ dyTable.email }}</td>
+                <!-- <td>{{ dyTable.start_Date }}</td>
+                <td>{{ dyTable.end_Date }}</td> -->
+                <td class="text-center">
+                  <div class="btn-group" role="group">
+                      <a class="btn btn-primary" (click)="userEdit(dyTable)"
+                        ><i class="far fa-edit"></i
+                        ></a>
+                      <a class="btn btn-danger" (click)="remove(dyTable)"
+                        ><i class="fa fa-times" aria-hidden="true"></i
+                        ></a>
+                  </div>
+                </td>
+              </tr>
+           </tbody>
+        </table>
+
+     </div>
+  
+    <form class="detailsform" [formGroup]="adForm" *ngIf="success">
+      <div class="boxmodel">
+
+        <div class="form-group row">
+          <div class="col-md-2">
+            <label for="StudentId">No</label>
+          </div>
+          <div class="col-md-6">
+            <input type="StudentId" disabled formControlName="adId" class="form-control" 
+              placeholder="Enter Advertisment id"
+            />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-2">
+            <label for="Name">Name</label>
+          </div>
+          <div class="col-md-6">
+            <input type="Name" value="Name" formControlName="adName" class="form-control"
+              placeholder="Enter Advertisment Name"
+            />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-2">
+            <label for="Gmail">Advertisment Description</label>
+          </div>
+          <div class="col-md-6">
+            <input type="Gmail" value="Gmail" formControlName="adDescription" class="form-control"
+              placeholder="Enter Description"
+            />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-2">
+            <label for="Gmail">Advertisment Type</label>
+          </div>
+          <div class="col-md-6">
+            <input type="Area" value="Area" formControlName="Type" class="form-control"
+              placeholder="Enter Type"
+            />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-2">
+            <label for="Gmail">Email</label>
+          </div>
+          <div class="col-md-6">
+            <input type="Gmail" value="Gmail" formControlName="Email" class="form-control"
+              placeholder="Enter Email"
+            />
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btcommoon" (click)="update()"> Update </button>
+        <button type="button" class="btn btn-warning bt-test btcommoon" (click)="Cancel()"> Cancel </button>
+
+      </div>
+
+    </form>
+  </div>
+  

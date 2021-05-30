@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { AddDetailsComponent } from './add-details/add-details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './guard/auth-guard.service';
+
+import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 const routes: Routes = [
-  { path : '', component: LoginComponent},
-  { path : 'login', component: LoginComponent},
-  { path : 'dashboard', component: DashboardComponent},
-  { path : 'registartion', component: UserRegistrationComponent}
+  // {path: '', redirectTo: "login",pathMatch:"full"},
+  {path: '', component: UserLoginComponent },
+  {path: 'user-login', component: UserLoginComponent },
+  {path: 'registration', component: UserRegistrationComponent },
+  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardService] },
+  {path : "form-deatails", component : AddDetailsComponent, canActivate:[AuthGuardService] }
 ];
 
 @NgModule({
